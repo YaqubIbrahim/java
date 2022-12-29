@@ -1,0 +1,58 @@
+package com.example.ecommerce.model;
+
+import java.util.Objects;
+import javax.persistence.*;
+
+public class Product {
+    private String name;
+    private Double price;
+    private String picurl;
+    private Long id;
+
+    public Product(){}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return name.equals(product.name) && price.equals(product.price) && picurl.equals(product.picurl) && id.equals(product.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, picurl, id);
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getPicurl() {
+        return picurl;
+    }
+
+    public void setPicurl(String picurl) {
+        this.picurl = picurl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+}
